@@ -26,4 +26,4 @@ class mainRequest{
     }
 }
 
-export const videoRequest = new mainRequest("http://codercba.com:9002")
+export const MyRequest = new mainRequest("http://codercba.com:9002")

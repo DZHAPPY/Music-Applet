@@ -14,6 +14,11 @@
 </swiper>
 
 <!-- 推荐歌曲展示 -->
-<view class="recommand">
+<view class="recommend">
     <area-header title="推荐歌曲" bind:moreclick="onRecommandMoreClick"/>
+    <view class="list">
+        <block  wx:for="{{recommendList}}" wx:key="id">
+            <music-list itemData="{{item}}"></music-list>
+        </block>
+    </view>
 </view>

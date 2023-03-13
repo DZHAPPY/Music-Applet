@@ -1,7 +1,7 @@
-import {videoRequest} from "./index"
+import {MyRequest} from "./index"
 
 export function getTopVideo(offset = 0,limit = 20){
-    return videoRequest.get({
+    return MyRequest.get({
         url:'/top/mv',
         data:{
             limit,
@@ -11,19 +11,19 @@ export function getTopVideo(offset = 0,limit = 20){
 }
 
 export function getVideoURL(id){
-    return videoRequest.get({
+    return MyRequest.get({
         url:`/mv/url?id=${id}&r=1080`
     })
 }
 
 export function getVideoInfo(id){
-    return videoRequest.get({
+    return MyRequest.get({
         url:`/mv/detail?mvid=${id}`
     })
 }
 
 export function getVideoRelated(id){
-    return videoRequest.get({
+    return MyRequest.get({
         url:`/related/allvideo?id=${id}`
     })
 }

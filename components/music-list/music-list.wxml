@@ -1,0 +1,11 @@
+<!--components/music-list/music-list.wxml-->
+<view class="item">
+    <view class="item-info">
+        <image src="{{itemData.al.picUrl}}" mode="widthFix" class="item-img" />
+        <view class="info-song">
+            <view class="title">{{itemData.name}}</view>
+            <view class="composer">{{itemData.ar[0].name}}</view>
+        </view>
+    </view>
+    <van-icon name="arrow" />
+</view>
