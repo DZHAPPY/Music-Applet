@@ -1,0 +1,16 @@
+{
+  "id": "3920336",
+  "name": "音乐小程序",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1624990",
+      "name": "icon_movie",
+      "font_class": "icon_movie",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    }
+  ]
+}

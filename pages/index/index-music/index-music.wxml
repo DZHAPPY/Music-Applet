@@ -1,0 +1,19 @@
+<!--pages/index/index-music/index-music.wxml-->
+<van-search
+  value="{{ searchValue }}"
+  shape="round"
+  background="#fff"
+  placeholder="请输入搜索关键词"
+/>
+<swiper indicator-dots autoplay circular interval="2000" class="banner">
+    <block wx:for="{{bannersUrl}}" wx:key="bannerId">
+        <swiper-item class="item">
+            <image src="{{item.pic}}" mode="widthFix" class="image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<!-- 推荐歌曲展示 -->
+<view class="recommand">
+    <area-header title="推荐歌曲" bind:moreclick="onRecommandMoreClick"/>
+</view>

@@ -1,0 +1,32 @@
+{
+    "pages": [
+        "pages/index/index-music/index-music",
+        "pages/index/index-video/index-video",
+        "pages/detail/detail-video/detail-video",
+        "pages/detail/detail-search/detail-search"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index-music/index-music",
+                "text": "首页",
+                "iconPath": "/assets/images/tabbar/music_normal.png",
+                "selectedIconPath": "/assets/images/tabbar/music_active.png"
+            },
+            {
+                "pagePath": "pages/index/index-video/index-video",
+                "text": "视频",
+                "iconPath": "/assets/images/tabbar/video_normal.png",
+                "selectedIconPath": "/assets/images/tabbar/video_active.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

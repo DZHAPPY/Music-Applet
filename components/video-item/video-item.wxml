@@ -1,0 +1,17 @@
+<!--components/video-item/video-item.wxml-->
+<wxs src="/utils/format.wxs" module="fmttool"></wxs>
+<view class="item" bindtap="onItemTap">
+    <view class="album">
+        <image src="{{itemData.cover}}" mode="widthFix" class="mvimg" />
+        <view class="info">
+            <view class="playcount">
+                <image src="/assets/images/icons/play_icon.png" mode="" class="playcount-logo"/>
+                <view class="playcount-data">
+                    {{fmttool.countFormat(itemData.playCount)}}    
+                </view>
+            </view>
+            <view class="duration">{{fmttool.durationFormat(itemData.mv.videos[1].duration)}}</view>
+        </view>
+    </view>
+    <view class="content">{{itemData.name}} - {{itemData.artistName}}</view>
+</view>

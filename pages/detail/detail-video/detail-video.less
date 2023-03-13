@@ -1,0 +1,64 @@
+/* pages/detail/detail-video/detail-video.wxss */
+page {
+    height: 100vh;
+}
+
+.MVPlayer {
+    width: 100%;
+}
+
+.video-info {
+    padding-left: 20rpx;
+    padding-bottom: 20rpx;
+
+    .info-name {
+        font-size: 35rpx;
+        font-weight: 700;
+        margin: 10rpx;
+    }
+
+    .info-artist,
+    .info-other {
+        font-size: 27rpx;
+        color: #686869;
+        margin: 10rpx;
+    }
+
+}
+
+
+.MVRelate {
+    height: calc(100vh - 330px);
+
+    .related-List {
+        .item {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            padding: 5rpx;
+
+            .item-image {
+                width: 40%;
+                border-radius: 14px;
+                flex-shrink: 0;
+                margin-right: 20rpx;
+            }
+
+            .item-detail{
+                .detail-info{
+                    font-size: 30rpx;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp:2;
+                    margin-bottom: 15rpx;
+                }
+                .detail-user{
+                    font-size: 24rpx;
+                    color: #686869;
+                }
+            }
+
+        }
+    }
+}
