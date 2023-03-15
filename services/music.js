@@ -17,3 +17,14 @@ export function getPlayListDetail(id){
         }
     })
 }
+
+export function getSongMenuList(cat = "全部",limit = 6,offset = 0){
+    return MyRequest.get({
+        url:"/top/playlist",
+        data:{
+            cat,
+            limit,
+            offset
+        }
+    })
+}

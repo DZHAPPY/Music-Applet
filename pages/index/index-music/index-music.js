@@ -1,17 +1,26 @@
-// pages/index/index-music/index-music.js
-import {getMusicBanner} from "../../../services/music"
+// pages/index/index-music/index-music.js\
+import {
+    getMusicBanner,
+    getPlayListDetail,
+    getSongMenuList
+} 
+from "../../../services/music"
 import {throttle} from "underscore"
-import {getPlayListDetail} from "../../../services/music"
 import recommendStore from "../../../store/RecommendStore"
+
+const app = getApp()
 Page({
     data: {
         searchValue: "",
         bannersUrl: [],
-        recommendList: []
+        recommendList: [],
+        hotMenuList:[],
+        screenWidth:0
     },
 
     onLoad() {
         this.fetchMusicBanner()
+        this.fetchSongMenuList()
         // this.fetchPlayListDetail()
         recommendStore.onState("recommendSongs",(value)=>{
             this.setData({
@@ -20,6 +29,7 @@ Page({
         })
 
         recommendStore.dispatch("fetchRecommentSongsAction")
+        this.setData({screenWidth:app.globalData.screenWidth})
     },
     async fetchMusicBanner() {
         const res = await getMusicBanner()
@@ -39,4 +49,12 @@ Page({
     //       recommendList:playlist.tracks.slice(0,6)
     //     })
     // }
+
+    // 获取热门歌单
+    async fetchSongMenuList(){
+        const res = await getSongMenuList()
+        this.setData({
+            hotMenuList:res.playlists
+        })
+    }
 })
