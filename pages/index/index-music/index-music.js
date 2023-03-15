@@ -13,8 +13,9 @@ Page({
     data: {
         searchValue: "",
         bannersUrl: [],
-        recommendList: [],
+        recommendSongs: [],
         hotMenuList:[],
+        recommendList:[],
         screenWidth:0
     },
 
@@ -24,7 +25,7 @@ Page({
         // this.fetchPlayListDetail()
         recommendStore.onState("recommendSongs",(value)=>{
             this.setData({
-                recommendList:value.splice(0,6)
+                recommendSongs:value.splice(0,6)
             })
         })
 
@@ -52,9 +53,12 @@ Page({
 
     // 获取热门歌单
     async fetchSongMenuList(){
-        const res = await getSongMenuList()
-        this.setData({
-            hotMenuList:res.playlists
+        getSongMenuList().then(res=>{
+            this.setData({hotMenuList:res.playlists})
+        })
+
+        getSongMenuList("华语").then(res=>{
+            this.setData({recommendList:res.playlists})
         })
     }
 })
