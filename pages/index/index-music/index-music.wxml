@@ -17,7 +17,7 @@
 <menu-area title="热门歌单" menuList="{{hotMenuList}}"></menu-area>
 
 <!-- 推荐歌单显示 -->
-<menu-area title="热门歌单" menuList="{{recommendList}}"></menu-area>
+<menu-area title="推荐歌单" menuList="{{recommendList}}"></menu-area>
 
 <!-- 推荐歌曲展示 -->
 <view class="recommend">
