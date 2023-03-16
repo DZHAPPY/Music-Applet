@@ -4,7 +4,7 @@
         <view class="class">
             <area-header title="{{item.cat}}" hasMore="{{false}}"></area-header>
             <view class="list">
-                <block wx:for="{{item.playlists}}" wx:for-item="item1">
+                <block wx:for="{{item.playlists}}" wx:for-item="item1" wx:key="id">
                     <view class="item1">
                         <menu-item itemData="{{item1}}"></menu-item>
                     </view>

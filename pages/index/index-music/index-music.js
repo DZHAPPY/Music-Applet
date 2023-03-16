@@ -7,6 +7,7 @@ import {
 from "../../../services/music"
 import {throttle} from "underscore"
 import recommendStore from "../../../store/RecommendStore"
+import rankingStore from "../../../store/RankingStore"
 
 const app = getApp()
 Page({
@@ -16,20 +17,25 @@ Page({
         recommendSongs: [],
         hotMenuList:[],
         recommendList:[],
-        screenWidth:0
+        screenWidth:0,
+
+        // 巅峰榜数据
+        RankingInfos:{}
     },
 
     onLoad() {
         this.fetchMusicBanner()
         this.fetchSongMenuList()
         // this.fetchPlayListDetail()
-        recommendStore.onState("recommendSongs",(value)=>{
-            this.setData({
-                recommendSongs:value.splice(0,6)
-            })
-        })
+        recommendStore.onState("recommendSongs",this.handleRecommnedSongs)
+        // 监听巅峰榜数据
+        rankingStore.onState("newRanking",this.getRankingHandle("newRanking"))
+        rankingStore.onState("originRanking",this.getRankingHandle("originRanking"))
+        rankingStore.onState("upRanking",this.getRankingHandle("upRanking"))
 
         recommendStore.dispatch("fetchRecommentSongsAction")
+        rankingStore.dispatch("fetchRankingDataActive")
+        // 获取屏幕尺寸
         this.setData({screenWidth:app.globalData.screenWidth})
     },
     async fetchMusicBanner() {
@@ -60,5 +66,22 @@ Page({
         getSongMenuList("华语").then(res=>{
             this.setData({recommendList:res.playlists})
         })
+    },
+
+
+    // 从Store中获取数据
+    handleRecommnedSongs(value){
+        this.setData({recommendSongs:value.splice(0,6)})
+    },
+    getRankingHandle(ranking){
+        return value => {
+            const newRankingInfo = {...this.data.RankingInfos,[ranking]:value}
+            this.setData({RankingInfos:newRankingInfo})
+        }
+    },
+
+    onUnload(){
+        // 页面卸载时取消对 recommendSongs 的监听
+        recommendStore.offState("recommendSongs",this.handleRecommnedSongs)
     }
 })

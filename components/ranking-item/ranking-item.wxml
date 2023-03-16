@@ -1,0 +1,20 @@
+<!--components/ranking-item/ranking-item.wxml-->
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
+<view class="ranking">
+    <view class="content">
+        <view class="name">{{itemData.name}}</view>
+        <view class="list">
+            <block wx:for="{{3}}" wx:key="*this">
+                <view class="item">
+                <text>{{item + 1}}. </text>
+                <text>{{itemData.tracks[item].name}} - </text>
+                <text>{{itemData.tracks[item].ar[0].name}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="album">
+        <image src="{{itemData.coverImgUrl}}" mode="heightFix" class="img"/>
+        <view class="count">{{fmt.countFormat(itemData.playCount)}}</view>
+    </view>
+</view>
