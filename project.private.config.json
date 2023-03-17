@@ -5,31 +5,5 @@
         "compileHotReLoad": true,
         "urlCheck": false
     },
-    "condition": {
-        "miniprogram": {
-            "list": [
-                {
-                    "name": "",
-                    "pathName": "pages/index/index-video/index-video",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/detail/detail-video/detail-video",
-                    "query": "id=14606291",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/detail/detail-menu/detail-menu",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                }
-            ]
-        }
-    }
+    "condition": {}
 }

@@ -35,7 +35,7 @@
     <area-header title='巅峰榜'></area-header>
     <view class="ramking-list">
         <block wx:for="{{RankingInfos}}" wx:key="id">
-            <ranking-item itemData="{{item}}"></ranking-item>
+            <ranking-item itemData="{{item}}" key="{{index}}"></ranking-item>
         </block>
     </view>
 </view>

@@ -1,66 +1,33 @@
 // pages/detail/detail-songs/detail-songs.js
+import rankingStore from "../../../store/RankingStore"
 Page({
-
-    /**
-     * 页面的初始数据
-     */
-    data: {
-
+    data:{
+        type:"",
+        key:"",
+        songInfos:{}
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
+    onLoad(option){
+        // 获取数据的类型   ranking:榜单数据    recommend:推荐数据
+        this.data.type = option.type
+        this.data.key = option.key
 
+
+        if(this.data.type === "ranking"){
+            rankingStore.onState(this.data.key,this.handleRanking)
+        }
+        // console.log(type);
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+    onUnload(){
+        if(this.data.type === "ranking"){
+            rankingStore.offState(this.data.key,this.handleRanking)
+        }
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
+    handleRanking(value){
+        console.log(value);
+        this.setData({songInfos:value})
+        wx.setNavigationBarTitle({
+          title: value.name,
+        })
     }
 })

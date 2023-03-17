@@ -1,0 +1,11 @@
+<!--components/music-list-v2/music-list-v2.wxml-->
+<view class="item">
+    <view class="index">{{index}}</view>
+    <view class="info">
+        <view class="name">{{itemData.name}}</view>
+        <view class="author">
+            <image src="/assets/images/icons/sq_icon.png" mode="widthFix" class="img"/>
+            <view class="name">{{itemData.ar[0].name}}</view>
+        </view>
+    </view>
+</view>

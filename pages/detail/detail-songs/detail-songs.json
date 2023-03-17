@@ -1,3 +1,5 @@
 {
-    "usingComponents": {}
+    "usingComponents": {
+        "music-list-v2":"/components/music-list-v2/music-list-v2"
+    }
 }
