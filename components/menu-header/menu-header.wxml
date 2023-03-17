@@ -1,0 +1,17 @@
+<!--components/menu-header/menu-header.wxml-->
+<view class="header" style="background-image: url({{songInfo.coverImgUrl}})">
+    <view class="bg"></view>
+    <view class="info">
+        <view class="left">
+            <image class="img" src="{{songInfo.coverImgUrl}}" mode="widthFix"/>
+        </view>
+        <view class="right">
+            <view class="name">{{songInfo.name}}</view>
+            <view class="description">简介:{{songInfo.description}}</view>
+        </view>
+    </view>
+    <view class="other">
+        <image class="other-img" src="/assets/images/icons/favor_icon.png" mode="widthFix"/>
+        <image class="other-img" src="/assets/images/icons/share_icon.png" mode="widthFix"/>
+    </view>
+</view>

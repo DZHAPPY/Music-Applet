@@ -27,7 +27,7 @@ Page({
         this.fetchMusicBanner()
         this.fetchSongMenuList()
         // this.fetchPlayListDetail()
-        recommendStore.onState("recommendSongs",this.handleRecommnedSongs)
+        recommendStore.onState("recommendSongInfo",this.handleRecommnedSongs)
         // 监听巅峰榜数据
         rankingStore.onState("newRanking",this.getRankingHandle("newRanking"))
         rankingStore.onState("originRanking",this.getRankingHandle("originRanking"))
@@ -45,7 +45,9 @@ Page({
         })
     },
     onRecommandMoreClick() {
-        console.log(123);
+        wx.navigateTo({
+          url: '/pages/detail/detail-songs/detail-songs?type=recommend',
+        })
     },
 
     // 发起获取推荐歌曲的网络请求(已用其他方式代替)
@@ -71,7 +73,12 @@ Page({
 
     // 从Store中获取数据
     handleRecommnedSongs(value){
-        this.setData({recommendSongs:value.splice(0,6)})
+        const newRecommendSongs = value.tracks
+        if(newRecommendSongs){
+            this.setData({recommendSongs:newRecommendSongs.splice(0,6)})
+        }
+        
+
     },
     getRankingHandle(ranking){
         return value => {
