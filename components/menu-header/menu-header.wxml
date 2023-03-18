@@ -1,6 +1,7 @@
 <!--components/menu-header/menu-header.wxml-->
-<view class="header" style="background-image: url({{songInfo.coverImgUrl}})">
-    <view class="bg"></view>
+<view class="header">
+    <image src="{{songInfo.coverImgUrl}}" mode="aspectFill" class="bg-image"/>
+    <view class="bg-cover"></view>
     <view class="info">
         <view class="left">
             <image class="img" src="{{songInfo.coverImgUrl}}" mode="widthFix"/>
