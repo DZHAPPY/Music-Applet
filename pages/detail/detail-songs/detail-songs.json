@@ -1,4 +1,5 @@
 {
+    "navigationStyle": "custom",
     "usingComponents": {
         "music-list-v2":"/components/music-list-v2/music-list-v2",
         "menu-header":"/components/menu-header/menu-header"

@@ -1,2 +1,40 @@
 <!--pages/music-player/music-player.wxml-->
-<text>pages/music-player/music-player.wxml</text>
+<image src="{{currentSong.al.picUrl}}" mode="aspectFill" class="bg-img"/>
+<view class="bg-cover"></view>
+<nav-bar>
+    <view class="tabs" slot="center">
+        <view class="item"  class="{{currentPage===0?'active':''}}">歌曲</view>
+        <view class="divider"> | </view>
+        <view class="item"  class="{{currentPage===1?'active':''}}">歌词</view>
+    </view>
+</nav-bar>
+
+<swiper bindchange="onSwiperChange" style="height: {{contentHeight}}px;">
+    <swiper-item class="music">
+        <view class="album">
+            <image src="{{currentSong.al.picUrl}}" mode="widthFix" class="img"/>
+        </view>
+        <view class="info">
+            <view class="name">{{currentSong.name}}</view>
+            <view class="author">{{currentSong.al.name}}</view>
+        </view>
+        <view class="lyric">一句歌词</view>
+        <view class="progress">
+            <slider bindchange="" block-size="20rpx" class="slider"/>
+            <view class="time">
+                <view class="currentTime">1:00</view>
+                <view class="duration">2:00</view>
+            </view>
+        </view>
+        <view class="control">
+            <image class="btn " src="/assets/images/player/play_order.png" mode="widthFix"/>
+            <image class="btn " src="/assets/images/player/play_prev.png" mode="widthFix"/>
+            <image class="btn " src="/assets/images/player/play_pause.png" mode="widthFix"/>
+            <image class="btn " src="/assets/images/player/play_next.png" mode="widthFix"/>
+            <image class="btn " src="/assets/images/player/play_music.png" mode="widthFix"/>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        歌词
+    </swiper-item>
+</swiper>

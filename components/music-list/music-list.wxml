@@ -1,5 +1,5 @@
 <!--components/music-list/music-list.wxml-->
-<view class="item">
+<view class="item" bindtap="onSongItemTap">
     <view class="item-info">
         <image src="{{itemData.al.picUrl}}" mode="widthFix" class="item-img" />
         <view class="info-song">

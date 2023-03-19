@@ -1,0 +1,32 @@
+/* components/nav-bar/nav-bar.wxss */
+.nav-bar {
+    .nav {
+        color: #ffffff;
+        padding: 0 20rpx;
+        height: 75rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left,
+        .right {
+            width: 120rpx;
+        }
+        .center{
+            display: flex;
+        }
+    }
+}
+
+.default {
+    display: block;
+    /* 默认显示 */
+}
+.slot:not(:empty)+.default {
+    display: none;
+    /* slot 非空时隐藏 default */
+}
+.slot:empty+.default {
+    display: block;
+    /* slot 为空时显示 default */
+}
