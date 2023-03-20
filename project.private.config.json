@@ -16,9 +16,9 @@
                     "scene": null
                 },
                 {
-                    "name": "播放页面-拆穿",
+                    "name": "播放页面-雨停了",
                     "pathName": "pages/music-player/music-player",
-                    "query": "id=399343373",
+                    "query": "id=1901319327",
                     "launchMode": "default",
                     "scene": null
                 }
