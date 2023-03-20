@@ -36,6 +36,12 @@
         </view>
     </swiper-item>
     <swiper-item>
-        歌词
+        <scroll-view class="lyric-list" scroll-y>
+            <block wx:for="{{LyricInfos}}">
+                <view class="lyric">
+                    {{item.text}}
+                </view>
+            </block>
+        </scroll-view>
     </swiper-item>
 </swiper>
