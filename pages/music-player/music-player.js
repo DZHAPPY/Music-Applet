@@ -16,7 +16,8 @@ Page({
         isSliderChanging:false,
         isPlaying:true,
         currentLyricText:"",
-        currentLyricIndex:-1
+        currentLyricIndex:-1,
+        LyricScrollTop:-1
     },
     onLoad(option){
         // 设置设备的基本信息
@@ -43,6 +44,7 @@ Page({
             // console.log(AudioContent.currentTime);
             // 匹配歌词
             if(!this.data.LyricInfos.length) return
+                // 获取歌词index索引
             let index = this.data.LyricInfos.length - 1
             for(let i = 0;i<this.data.LyricInfos.length;i++){
                 const info = this.data.LyricInfos[i]
@@ -54,7 +56,9 @@ Page({
             if(this.currentLyricIndex === index) return
             this.setData({
                 currentLyricText:this.data.LyricInfos[index].text,
-                currentLyricIndex:index
+                currentLyricIndex:index,
+                // 设置歌词滚动位置
+                LyricScrollTop:40 * index
             })
         })
         AudioContent.onWaiting(()=>{

@@ -36,9 +36,11 @@
         </view>
     </swiper-item>
     <swiper-item>
-        <scroll-view class="lyric-list" scroll-y>
-            <block wx:for="{{LyricInfos}}">
-                <view class="lyric">
+        <scroll-view class="lyric-list" scroll-y scroll-top="{{LyricScrollTop}}" scroll-with-animation>
+            <block wx:for="{{LyricInfos}}" wx:key="index">
+                <view 
+                class="lyric {{index === currentLyricIndex ? 'active' : ''}}" 
+                style="padding-top:{{index === 0? (contentHeight/3):0}}px;padding-bottom:{{index === LyricInfos.length - 1? (contentHeight/2):0}}px;">
                     {{item.text}}
                 </view>
             </block>

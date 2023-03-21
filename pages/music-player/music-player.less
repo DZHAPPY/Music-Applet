@@ -82,11 +82,19 @@
 
 .lyric-list{
     // border: 1px solid red;
-    height: 99%;
+    height: 100%;
     color: #aaa;
     text-align: center;
     .lyric{
         height: 40px;
         line-height: 40px;
+    }
+
+    .active{
+        color: rgb(47, 206, 47);
+        font-size: 37rpx;
+    }
+    &::-webkit-scrollbar{
+        display: none;
     }
 }
