@@ -26,4 +26,4 @@ class mainRequest{
     }
 }
 
-export const MyRequest = new mainRequest("http://codercba.com:9002")
+export const MyRequest = new mainRequest("http://192.168.31.145:3000")
